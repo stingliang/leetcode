@@ -7,10 +7,13 @@
 
 // std include
 #include <iostream>
+#include <unordered_set>
+#include <unordered_map>
 #include <vector>
 #include <array>
 
 // boost include
-
+#include <boost/core/ignore_unused.hpp>
+#include <boost/lexical_cast.hpp>
 
 #endif //LEETCODE_COMMON_H
