@@ -82,13 +82,13 @@ bool isValidSudoku(std::vector<std::vector<char>>& board) {
 
 void rotateImage(std::vector<std::vector<int>>& matrix) {
     int n = boost::lexical_cast<int>(matrix.size());
-    for (int i = 0; i < n / 2; ++i) {
-        for (int j = 0; j < (n + 1) / 2; ++j) {
-            int temp = matrix[i][j];
-            matrix[i][j] = matrix[n - j - 1][i];
-            matrix[n - j - 1][i] = matrix[n - i - 1][n - j - 1];
-            matrix[n - i - 1][n - j - 1] = matrix[j][n - i - 1];
-            matrix[j][n - i - 1] = temp;
+    for (int row = 0; row < (n + 1) / 2; row++) {
+        for (int col = 0; col < n / 2; col++) {
+            int temp = matrix[row][col];
+            matrix[row][col] = matrix[n - col - 1][row];
+            matrix[n - col - 1][row] = matrix[n - row - 1][n - col - 1];
+            matrix[n - row - 1][n - col - 1] = matrix[col][n - row - 1];
+            matrix[col][n - row - 1] = temp;
         }
     }
 }
